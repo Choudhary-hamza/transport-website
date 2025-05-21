@@ -1,0 +1,108 @@
+.header{
+    width: 95%;
+    max-width: 1320px;
+    height: 66.4px;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.header_image{
+    width: 70px;
+    height:56px;
+    position: relative;
+}
+.header_image img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+}
+.welcome{
+    width: 100%;
+    height: 40px;
+    margin: 30px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.welcome p{
+    margin: 0;
+    color: #6c7293;
+}
+.instruction{
+    width: 100%;
+    height: 40px;
+    margin: 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.instruction p{
+    color: #6c7293;
+    margin: 0;
+}
+.form_container{
+    width: 95%;
+    max-width: 1326px;
+    min-height: 190px;
+    margin: 140px auto 0;
+}
+.form{
+    width:100%;
+    max-width: 552px;
+    height: 100%;
+    margin:0 auto;
+}
+.inputField {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: end;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3f51b5; /* Approximate color from the image */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #303f9f; /* Darker shade for hover effect */
+  }
+  .errorContainer{
+    width: 95%;
+    max-width:552px;
+    height: 53px;
+    margin: 0 auto 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcdede;
+    border-radius: 5px;
+  }
+  .errors{
+    text-align: center;
+    color: #ab3737;
+    margin: 0;
+  }
+.end_field{
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    color: #6c7293;
+}

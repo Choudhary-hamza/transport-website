@@ -1,0 +1,76 @@
+.menu{
+    width: 95%;
+    max-width: 1300px;
+    min-height: 100px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    flex-wrap: wrap;
+    margin: 50px auto 0;
+    padding: 0;
+}
+.form_container{
+    height: 63px;
+    width: 95%;
+    margin: 20px auto 20px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+.submit{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+    background-color: #0ddbb9;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color: #57e5cd;
+}
+.label{
+    width: 80%;
+    height: 50px;
+    max-width: 700px;
+    border-radius: 5px;
+}
+.inputField {
+    width: 100%;
+    height: 100%;
+    text-align: end;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: end;
+  }
+  .inputField::placeholder {
+    color: gray;
+  }
+  .error{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ab3737;
+  }
+  .message {
+    z-index: 11;
+    width: 50%;
+    height: 50px;
+    max-width: 200px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: #0ddbb9;
+    text-align: center;
+     border-radius: 10px; 
+  } 
+  

@@ -1,0 +1,120 @@
+.header{
+    width: 95%;
+    max-width: 1320px;
+    height: 66.4px;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_image{
+    width: 70px;
+    height:56px;
+    position: relative;
+}
+.header_image img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+}
+.profile{
+    width: 90px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.profile p{
+    width: 40px;
+    height: 56px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width:50px ;
+    height:56px ;
+}
+.icon a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+.remixicon{
+    font-size: 30px !important;
+}
+.menu_container{
+    width: 100%;
+    max-width: 440px;
+    margin:0 auto ;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    right: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.511);
+    z-index: 10;
+}
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0 ;
+    
+}
+.list li{
+    list-style: none;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+}
+.list li:hover{
+    background-color: #0ddbb9;
+}
+.list li a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+.list li a:hover{
+    background-color:#0ddbb9;
+}
+.content{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 12px;
+}
+.iconsContainer{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.remixicons{
+    font-size: 25px !important;
+}
+.active{
+    background-color: #0ddbb9;
+}

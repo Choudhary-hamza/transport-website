@@ -1,0 +1,187 @@
+.header{
+    width: 95%;
+    max-width: 1000px;
+    height: 120px;
+    margin: 20px auto 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 5px;
+}
+.header_image{
+    width: 120px;
+    height:110px;
+    position: relative;
+}
+.header_image img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+}
+.header_name{
+    color: darkblue;
+    max-width: 200px;
+    min-height: 134px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 0;
+}
+.identification{
+    width: 95%;
+    max-width:1000px ;
+    min-width: 30px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    margin: 0 auto;
+}
+.register{
+    width: 50%;
+    min-height: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.register b{
+    color: darkblue;
+}
+.hrLine {
+    height: 5px;
+    width: 95%;
+    border-top: 2px solid black;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .information{
+    width: 95%;
+    max-width: 1300px;
+    min-height :200px;
+    margin: 10px auto 0; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .pictures{
+    width: 50%;
+    min-height: 400px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  .driverInfo{
+    width: 50%;
+    min-height: 400px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .userInfo{
+    width: 100%;
+    min-height: 50.6px;
+  }
+  .userRegister{
+    width: 100%;
+    min-height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+     text-align: right; 
+  }  
+  .userRegister span{
+    font-weight: normal;
+  }
+  .infoLine{
+    height: 3px;
+    width: 100%;
+    border-top: 2px solid black;
+    margin: 0 auto;
+    margin-bottom: 16px;
+  }
+  .driver_photo{
+    width: 180px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    padding: 4px;
+    box-sizing: border-box;
+  }
+  .driver_photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+  .barcodes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 130px;
+  }
+  .company_barcode{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+  }
+  .company_barcode img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .company_stamp{
+    width: 160px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 120px;
+  }
+  .company_stamp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+  }
+  .error{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff4d4d;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .print{
+    width: 73px;
+    height: 35px;
+    border-radius :5px ;
+    border: 0;
+    background-color: #464dee;
+    position: absolute;
+    bottom: 20px;
+    left: 45%;
+    color: white;
+  }
+  @media (orientation: portrait) {
+    .barcodes{
+      margin-top: 10px;
+    }
+    .company_stamp{
+      margin-right: 10px;
+    }
+  }
