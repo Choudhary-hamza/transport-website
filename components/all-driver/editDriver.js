@@ -53,7 +53,6 @@ export default function EditDriver({ data }) {
       setUpdation(true);
       router.push("/book/all-driver");
     }
-    console.log(data.driver_id);
     const response = await fetch("/api/all-driver", {
       method: "PATCH",
       headers: {
@@ -176,7 +175,7 @@ export default function EditDriver({ data }) {
             className={styles.inputField}
             required
             ref={passwordRef}
-            type="password"
+            type="text"
             name="password"
             id="password"
             defaultValue={data.password}

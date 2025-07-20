@@ -3,7 +3,6 @@ import styles from "./allDrivers.module.css";
 import Image from "next/image";
 import Link from "next/link";
 export default function DriverCard({ eachData, index, deleteDriver }) {
-  console.log("eachData", eachData);
   return (
     <div className={styles.card_container}>
       <div className={styles.image}>

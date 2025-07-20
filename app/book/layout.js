@@ -6,13 +6,11 @@ export const metadata = {
   description: "Admin and driver dashboard",
 };
 
-export default function RootLayout({ children }) {
+export default function BookLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        <ContentHeader />
-        {children}
-      </body>
-    </html>
+    <div className="min-h-screen">
+      <ContentHeader />
+      {children}
+    </div>
   );
 }

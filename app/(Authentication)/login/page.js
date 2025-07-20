@@ -59,7 +59,7 @@ export default function LoginPage({ searchParams }) {
           <input
             className={styles.inputField}
             required
-            type="password"
+            type="text"
             name="password"
             ref={passwordRef}
             id="password"

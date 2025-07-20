@@ -9,15 +9,13 @@ export default function PostForm({ action }) {
       <p className={styles.heading}>أدخل معلومات السائقين الجدد</p>
       <main className={styles.main}>
         <form className={styles.form} action={updatedForm}>
-          {state.errors && (
-            <div className={styles.errorContainer}>{state.errors}</div>
-          )}
           <input
             className={styles.inputField}
             type="text"
             name="name"
             id="name"
             placeholder="اسم السائق"
+            defaultValue={state.values?.name || ""}
           />
           <input
             className={styles.inputField}
@@ -25,6 +23,7 @@ export default function PostForm({ action }) {
             name="nationality"
             id="nationality"
             placeholder="الجنسية"
+            defaultValue={state.values?.nationality || ""}
           />
           <input
             className={styles.inputField}
@@ -32,6 +31,7 @@ export default function PostForm({ action }) {
             name="phoneNumber"
             id="phoneNumber"
             placeholder="رقم الجوال"
+            defaultValue={state.values?.phoneNumber || ""}
           />
           <input
             className={styles.inputField}
@@ -39,6 +39,7 @@ export default function PostForm({ action }) {
             name="residencyNumber"
             id="residencyNumber"
             placeholder="رقم الاقامة"
+            defaultValue={state.values?.residencyNumber || ""}
           />
           <input
             className={styles.inputField}
@@ -46,6 +47,7 @@ export default function PostForm({ action }) {
             name="cardNumber"
             id="cardNumber"
             placeholder="رقم البطاقة"
+            defaultValue={state.values?.cardNumber || ""}
           />
           <input
             className={styles.inputField}
@@ -53,6 +55,7 @@ export default function PostForm({ action }) {
             name="carType"
             id="carType"
             placeholder="نوع السيارة"
+            defaultValue={state.values?.carType || ""}
           />
           <input
             className={styles.inputField}
@@ -60,16 +63,21 @@ export default function PostForm({ action }) {
             name="plateNumber"
             id="plateNumber"
             placeholder="رقم لوحة السيارة"
+            defaultValue={state.values?.plateNumber || ""}
           />
           <input
             className={styles.inputField}
-            type="password"
+            type="text"
             name="password"
             id="password"
             placeholder="كلمة السر للدخول"
+            defaultValue={state.values?.password || ""}
           />
           <p className={styles.photoDescription}> صورة السائق </p>
           <ImagePicker label=" صورة السائق " name="image" />
+          {state.errors && (
+            <div className={styles.errorContainer}>{state.errors}</div>
+          )}
           <button type="submit" className={styles.submit}>
             Create
           </button>

@@ -39,25 +39,73 @@ export default async function addDriver() {
     ) {
       errors.push("Please fill in all fields.");
     }
-    if (errors.length > 0) {
-      return { errors };
+    if (!photo || !photo.size || !photo.type.startsWith("image/")) {
+      errors.push("Please upload an image again.");
+      return { errors, values: {
+        name,
+        nationality,
+        phoneNumber: mobile_number,
+        residencyNumber: residency_number,
+        cardNumber: card_number,
+        carType: car_type,
+        plateNumber: car_plate_number,
+        password
+      }};
     }
-    const isDuplicated = findDriver(residency_number);
+    if (errors.length > 0) {
+      return { errors, values: {
+        name,
+        nationality,
+        phoneNumber: mobile_number,
+        residencyNumber: residency_number,
+        cardNumber: card_number,
+        carType: car_type,
+        plateNumber: car_plate_number,
+        password
+      }};
+    }
+    const isDuplicated = await findDriver(residency_number);
     if (isDuplicated) {
       errors.push("this driver is already registered");
     }
     if (errors.length > 0) {
-      return { errors };
+      return { errors, values: {
+        name,
+        nationality,
+        phoneNumber: mobile_number,
+        residencyNumber: residency_number,
+        cardNumber: card_number,
+        carType: car_type,
+        plateNumber: car_plate_number,
+        password
+      }};
     }
     let image;
     try {
       image = await uploadImage(photo);
-      console.log("image", image);
     } catch (error) {
-      return { errors: ["error occuring while uploading image"] };
+      return { errors: ["error occuring while uploading image"], values: {
+        name,
+        nationality,
+        phoneNumber: mobile_number,
+        residencyNumber: residency_number,
+        cardNumber: card_number,
+        carType: car_type,
+        plateNumber: car_plate_number,
+        password
+      }};
     }
     if (errors.length > 0) {
-      return { errors };
+      return { errors, values: {
+        name,
+        nationality,
+        phoneNumber: mobile_number,
+        residencyNumber: residency_number,
+        cardNumber: card_number,
+        carType: car_type,
+        plateNumber: car_plate_number,
+        password
+      }};
     }
     try {
       await createDriver(
@@ -72,7 +120,16 @@ export default async function addDriver() {
         image
       );
     } catch (error) {
-      return { errors: ["please try again"] };
+      return { errors: ["please try again"], values: {
+        name,
+        nationality,
+        phoneNumber: mobile_number,
+        residencyNumber: residency_number,
+        cardNumber: card_number,
+        carType: car_type,
+        plateNumber: car_plate_number,
+        password
+      }};
     }
     revalidatePath("/book/all-driver");
     redirect("/book/all-driver");

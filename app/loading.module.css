@@ -1,0 +1,30 @@
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.spinnerInner {
+  width: 100%;
+  height: 100%;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #273272;
+  border-radius: 50%;
+}
+
+.loadingText {
+  font-size: 1.2rem;
+  color: #273272;
+  font-weight: 500;
+  margin: 0;
+} 

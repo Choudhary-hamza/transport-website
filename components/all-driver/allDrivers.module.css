@@ -12,19 +12,20 @@
     border-radius: 13px;
     background-color: #e4e4e4;
     box-shadow: 3px 5px 13px 0px #727272;;
+    padding: 5px;
 }
-.image{
-    width: 150px;
-    height: 148px;
-    margin: 5px auto 0;
-    position: relative;
-    border-radius: 150px;
-    overflow: hidden;
+.image {
+  width: 150px;
+  height: 150px;
+  margin: 5px auto 0;
+  position: relative;
+  border-radius: 50%; /* Full circle */
+  overflow: hidden;
 }
-.image img{
-    position: absolute;
-    object-fit: contain;
-    border-radius: 25px;
+
+.image img {
+  object-fit: cover;     /* Fill and crop the image to fit */
+  border-radius: 0;      /* Let the parent handle the shape */
 }
 .logo_container{
     width: 100%;

@@ -7,6 +7,7 @@ export default function DriverProfile({ userId }) {
   const imageRef = useRef();
   const [currentImage, setImage] = useState();
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
   const pickImageHandler = () => {
     imageRef.current.click();
   };
@@ -41,6 +42,7 @@ export default function DriverProfile({ userId }) {
   function handleChange(e) {
     e.preventDefault();
     setError(null);
+    setSuccess(null);
     if (currentImage === driver?.photo) {
       setError("يرجى تغيير الصورة أولاً");
       return;
@@ -59,6 +61,8 @@ export default function DriverProfile({ userId }) {
       .then((res) => res.json())
       .then((data) => {
         setDriver(data.data); // use the correct key returned from API
+        setSuccess("تم تغيير الصورة بنجاح ✅");
+        
       })
       .catch((error) => {
         setError(error.message);
@@ -77,6 +81,11 @@ export default function DriverProfile({ userId }) {
       ) : (
         ""
       )}
+      {success && (
+  <div className={styles.successContainer}>
+    <p className={styles.success}>{success}</p>
+  </div>
+)}
       <form className={styles.form} onSubmit={handleChange}>
         <div className={styles.imagePicker}>
           <div className={styles.pickerInput}>
@@ -170,7 +179,7 @@ export default function DriverProfile({ userId }) {
         />
         <input
           className={styles.inputField}
-          type="password"
+          type="text"
           name="password"
           id="password"
           defaultValue={driver?.password}

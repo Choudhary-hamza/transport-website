@@ -11,7 +11,6 @@ export default async function ContentHeader() {
     redirect("/login");
   }
   const role = JSON.parse(cookieStore.get("role").value);
-  console.log("User role:", role);
   return (
     <>
       <header className={styles.header}>

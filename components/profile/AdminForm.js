@@ -36,7 +36,7 @@ export default function AdminProfile({ action }) {
           />
         </div>
         <button type="submit" className={styles.button}>
-          changing
+          Submit
         </button>
       </form>
     </div>

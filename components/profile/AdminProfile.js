@@ -9,7 +9,6 @@ export default function AdminProfileWrapper() {
     const newPassword = formData.get("pass1");
     const repeatPassword = formData.get("pass2");
     const isValid = await checkPasswords(previousPassword);
-    console.log("isValid", isValid);
     let errors = [];
     if (!isValid) {
       errors.push("previous password is incorrect");
