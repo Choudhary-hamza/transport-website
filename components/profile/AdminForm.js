@@ -1,6 +1,7 @@
 "use client";
 import { useActionState } from "react";
 import styles from "./AdminProfile.module.css";
+import {CompanyQR} from "@/components/profile/CompanyQR"
 export default function AdminProfile({ action }) {
   const [state, updatedForm] = useActionState(action, {});
   return (
@@ -39,6 +40,7 @@ export default function AdminProfile({ action }) {
           Submit
         </button>
       </form>
+        <CompanyQR></CompanyQR>
     </div>
   );
 }

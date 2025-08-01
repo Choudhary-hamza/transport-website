@@ -8,8 +8,6 @@ import { usePathname } from "next/navigation";
 export default function MenuSection() {
   const pathname = usePathname() || "/";
   const normalizedPath = pathname.replace(/\/$/, "") || "/";
-  console.log("Normalized path name:", normalizedPath);
-
   const navItems = [
     { name: "Home", href: "/" },
     { name: "cars", href: "#cars" },

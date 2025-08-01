@@ -83,7 +83,8 @@ export default function LoginPage({ searchParams }) {
         )}
       </div>
       <p className={styles.end_field}>
-        نظام حجوزات مؤسسة ماهر السفر الالكتروني{" "}
+        نظام حجوزات شركة الناقل العالمي المحدودة
+{" "}
       </p>
     </>
   );

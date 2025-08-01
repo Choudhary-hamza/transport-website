@@ -5,17 +5,12 @@ export default function MediaSection(){
             <div className={styling.subcontainer1}>
                 <span className={styling.phone}>
                     <i className="ri-phone-fill"></i>
-                    <a href="tel:+1234567890" className={styling.phoneNumber}>+1234567890</a>
+                    <a href="tel:+966 54 451 9392 " className={styling.phoneNumber}>+966 54 451 9392 </a>
                 </span>
                 <span className={styling.phone}>
                     <i className="ri-whatsapp-fill"></i>
-                    <a href="https://wa.me/+1234567890" className={styling.phoneNumber}>+1234567890</a>
+                    <a href="https://wa.me/+966 54 451 9392 " className={styling.phoneNumber}>+966 54 451 9392 </a>
                 </span>
-            </div>
-            <div className={styling.subcontainer2}>
-                <a href="#">
-                    <i className="ri-facebook-fill"></i>
-                </a>
             </div>
         </div>
     </div>

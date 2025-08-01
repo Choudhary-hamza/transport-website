@@ -106,6 +106,16 @@ export default function FlightCard() {
 
     fetchData();
   }, [flightId]);
+  useEffect(() => {
+  if (driverData && guestData?.[0]) {
+    document.title = `${driverData.name} & ${guestData[0].name}`;
+  } else if (driverData) {
+    document.title = driverData.name;
+  } else {
+    document.title = "Flight Card"; // Default title
+  }
+}, [driverData, guestData]);
+
   function handlePrint() {
     window.print();
   }
@@ -132,8 +142,10 @@ export default function FlightCard() {
           </div>
         </div>
         <div className={styles.header_subcontainer}>
-          <p className={styles.company_information}>مؤسسة ماهر السفر للنقل</p>
-          <p className={styles.company_information}>س.ت:4031272349</p>
+          <p className={styles.company_information}>شركة الناقل العالمي المحدودة</p>
+          <p className={styles.company_information}>س.ت:4031299076</p>
+          <p className={styles.company_information}>رقم الهاتف
+:9392 451 54 966</p>
         </div>
       </header>
       <p className={styles.contract}>عقد نقل على الطرق البرية</p>
@@ -143,23 +155,18 @@ export default function FlightCard() {
         </p>
         <p className={styles.paragaraph1} dir="rtl">
           {" "}
-          تم ابرام هذا العقد بين المتعاقدين بناء على المادة (39) التاسعة
-          والثلاثون من اللائحة المنظمة لنشاط النقل المتخصص وتأجير وتوجيه
-          الحافلات وبناء على الفقرة (1) من المادة (39) والتي تنص على أن يجب على
-          الناقل ابرام عقد نقل مع الأطراف المحددين في المادة (40) قبل تنفيذ
-          عمليات النقل على الطرق البرية وبما لا يخالف أحكام هذه اللائحة ووفقاً
-          للآلية التي تحددها هيئة النقل
+          تم ابرام هذا العقد بين المتعاقدين بناء على المادة )۳۹( التاسعة والثالثون من االلئحة المنظمة للنشاط النقل المتخصص وتأجير وتوجيه
+الحافالت وبناء على الفقرة )۱( من المادة )۳۹( والتي تنص على أن يجب على الناقل ابرام عقد نقل مع األطراف المحددين في المادة
+)٤٠( قبل تنفيذ عمليات النقل للتلية التي تحددها هيئة النقل. وبناء على على الطرق البرية وبما ال يخالف أحكام هذه االلئحة ووفقا ما سبق
+تم ابرام عقد النقل بين األطراف اآلتية
         </p>
         <p className={styles.paragaraph1} dir="rtl">
           {" "}
-          وبناء على ما سبق تم ابرام عقد النقل بين الأطراف الآتية:{" "}
-        </p>
-        <p className={styles.paragaraph1} dir="rtl">
-          {" "}
-          الطرف الأول :{" "}
+          الطرف االول :شركة الناقل العالمي المحدودة
+
+ :{" "}
           <b className={styles.bold}>
-            {" "}
-            مؤسسة ماهر السفر للنقل ترخيص رقم: 35/00002393/{" "}
+            L.N:35/00003211
           </b>
         </p>
         <p className={styles.paragaraph1} dir="rtl">
@@ -169,12 +176,15 @@ export default function FlightCard() {
         </p>
         <p className={styles.paragaraph1} dir="rtl">
           {" "}
-          اتفق الطرفان على ان ينفذ الطرف الأول عملية النقل للطرف الثاني مع
-          مرافقيه وذويهم من الموقع المحدد مسبقا مع الطرف الثاني وتوصيلهم الى
-          الجهه المحدده بالعقد{" "}
+          االتى أسمائهم في الكشف{" "}
+        </p>
+        <p className={styles.paragaraph1} dir="rtl">
+          {" "}
+        اتفق الطرفان على ان ينفذ الطرف األول عملية النقل للطرف الثاني مع مرافقيه وذويهم من الموقع المحدد مسبقا مع الطرف الثاني
+وتوصيلهم إلى الجهة المحددة بالعقد{" "}
         </p>
         <p className={styles.paragaraph2} dir="rtl">
-          النقل من:{" "}
+          وصوا ل :{" "}
           <span className={styles.bold2}>{flightData?.coming_from} </span>
         </p>
         <p className={styles.paragaraph2} dir="rtl">
@@ -182,37 +192,26 @@ export default function FlightCard() {
           وصولا الى:{" "}
           <span className={styles.bold2}> {flightData?.arrival_to} </span>
         </p>
-        <p className={styles.paragaraph2} dir="rtl">
-          {" "}
-          مدة الرحلة :{" "}
-          <span className={styles.bold2}> {flightData?.trip_duration} </span>
-        </p>
-        <p className={styles.paragaraph2} dir="rtl">
-          {" "}
-          سعر الرحلة :{" "}
-          <span className={styles.bold2}>
-            {flightData?.price ? flightData.price : "آجل ر.س"}{" "}
-          </span>
-        </p>
+       
         <p className={styles.paragaraph1} dir="rtl">
           {" "}
-          في حال الغاء التعاقد لاي سبب شخصي او اسباب اخرى تتعلق في الحجوزات او
-          الانظمه تكون سياسة الالغاء والاستبدال حسب نظام وزارة التجارة السعودي
-          في حالة الحجز وتم الالغاء قبل موعد الرحلة باكثر من 24 ساعة يتم استرداد
-          المبلغ كامل. في حالة طلب الطرف الثاني الحجز من خلال الموقع الالكتروني
-          للمؤسسه يعتبر هذا الحجز وموافقته على الشروط والاحكام بالموقع
-          الالكتروني هو موافقة على هذا العقد لتنفيذ عملية النقل المتفق عليها مع
-          الطرف الأول بواسطة حافلات المؤسسة المرخصة والمتوافقة مع الاشتراطات
-          المقررة من هيئة النقل.{" "}
+         في حال الغاء التعاقد ألي سبب شخصي او اسباب أخرى تتعلق في الحجوزات او االنظمة تكون سياسة اإللغاء واالستبدال حسب
+نظام وزارة التجارة السعودي في حالة الحجز وتم االلغاء قبل موعد الرحلة بأكثر .من ٢٤ ساعة يتم استرداد المبلغ كامل{" "}
+        </p>
+        <p className={styles.paragaraph12} dir="rtl">
+          {" "}
+         في في حالة طلب الطرف الثاني الحجز من خالل الموقع االلكتروني للمؤسسة يعتبر هذا الحجز وموافقته على الشروط واالحكام بالموقع
+االلكتروني هو موافقة على هذا العقد لتنفيذ عملية النقل المتفق عليها مع الطرف األول بواسطة حافالت المؤسسة المرخصة والمتوافقة مع
+االشتراطات المقررة من هيئة النقل{" "}
         </p>
         <div className={styles.signature}>
-          <Image src="/logo.png" alt="company image" fill></Image>
+          <Image src="/signature.png" alt="company image" fill></Image>
         </div>
-        <section className={styles.header}>
+       <section className={styles.header}>
           <div className={styles.header_subcontainer}>
-            <p className={styles.company_information1}>Maher Transport</p>
-            <p className={styles.company_information1}>L.N:35/00002393</p>
-            <p className={styles.company_information1}>C.R:4031272349</p>
+            <p className={styles.company_information1}>Global Carrier LTD</p>
+            <p className={styles.company_information1}>L.N:35/00003211</p>
+            <p className={styles.company_information1}>C.R:4031299076</p>
           </div>
           <div className={styles.header_subcontainer}>
             <div className={styles.flight_barcode}>
@@ -220,13 +219,12 @@ export default function FlightCard() {
             </div>
           </div>
           <div className={styles.header_subcontainer}>
-            <p className={styles.company_information1}>مؤسسة</p>
-            <p className={styles.company_information1}>ماهر السفر</p>
-            <p className={styles.company_information1}>للنقل</p>
+            <p className={styles.company_information1}>شركة</p>
+            <p className={styles.company_information1}>الناقل العالمي</p>
+            <p className={styles.company_information1}> المحدودة</p>
           </div>
         </section>
         <p className={styles.company_information2}>بيانات السائق والركاب </p>
-        <p className={styles.company_information1}>لمؤسسة ماهر السفر للنقل</p>
         <section className={styles.header1}>
           <div className={styles.header_subcontainer}>
             <p className={styles.company_information3} dir="rtl">
@@ -258,7 +256,7 @@ export default function FlightCard() {
         </p>
         <p className={styles.company_information3} dir="rtl">
           {" "}
-          : رقم الرحلة{" "}
+           رقم الرحلة :{" "}
           <span className={styles.bold2}>{flightData?.flight_numbers}</span>
         </p>
         <table className={`${styles.tableCustom}`}>
@@ -297,7 +295,7 @@ export default function FlightCard() {
             </tr>
           </tbody>
         </table>
-        <table className={`${styles.tableCustom1} ${styles.tableStriped}`}>
+        <table className={`${styles.tableCustom} ${styles.tableStriped}`}>
           <thead>
             <tr>
               <th className={styles.thab}>رقم الهوية/الجواز</th>
@@ -307,7 +305,7 @@ export default function FlightCard() {
           </thead>
           <tbody>
             {guestTableRows.map((guest, index) => (
-              <tr key={index}>
+              <tr key={index} className={styles.tableRow}>
                 <td>{guest.id_number || ""}</td>
                 <td>{guest.nationality || ""}</td>
                 <td>{guest.name || ""}</td>
@@ -318,14 +316,10 @@ export default function FlightCard() {
 
         <p className={styles.company_information2}>*** ملاحظة هامة ***</p>
         <p className={styles.company_information1}>
-          فى حال عدم تطابق بيانات الضيف مع الاثبات نكن عرضه للجزاء وهذا تعهد منا
-          بذلك
-        </p>
-        <p className={styles.company_information1}>
-          للاستفسارات : 00966507975123
+         حال عدم تطابق بيانات األسماء مع االثبات تكن عرضة للجزاء و هذا تعهد منا بذلك شاكرين ومقدرين تعاونكم معنا
         </p>
         <div className={styles.signature}>
-          <Image src="/logo.png" alt="company image" fill></Image>
+          <Image src="/signature.png" alt="company image" fill></Image>
         </div>
       </div>
       <button className={styles.print} onClick={handlePrint}>

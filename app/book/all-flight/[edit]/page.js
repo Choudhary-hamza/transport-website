@@ -12,8 +12,6 @@ export default async function EditFlight({ params }) {
   const guestsData = await getGuestsByFlightId(id);
   const firstGuest = guestsData?.[0] || {};
   const otherGuests = guestsData?.slice(1) || [];
-  console.log(data);
-  console.log(guestsData);
   const guests = Array.from({ length: 11 }, (_, i) => i + 2); // [2, 3, ..., 12]/ [1, 2, ..., 11]
   function ordinal(n) {
     const s = ["th", "st", "nd", "rd"];

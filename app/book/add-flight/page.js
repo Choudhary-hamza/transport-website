@@ -49,8 +49,6 @@ export default async function AddFlight() {
     const flight_number = formData.get("flight_number");
     const price = formData.get("price");
 
-    console.log(userId);
-
     const flightId = await createFlight(
       contact,
       pickup,
@@ -241,7 +239,6 @@ export default async function AddFlight() {
             </label>
             <input
               type="text"
-              required
               id="price"
               name="price"
               className={styles.input}
@@ -268,7 +265,7 @@ export default async function AddFlight() {
                     type="text"
                     name={`vname${index}`}
                     className={styles.input}
-                    placeholder={`اسم الضيف ${arabicOrdinal(index)}`}
+                    placeholder={`اسم الضيف ${arabicOrdinal(index-1)}`}
                   />
                 </div>
 
@@ -281,7 +278,7 @@ export default async function AddFlight() {
                     type="text"
                     name={`g${index}`}
                     className={styles.input}
-                    placeholder={`جنسية الضيف ${arabicOrdinal(index)}`}
+                    placeholder={`جنسية الضيف ${arabicOrdinal(index-1)}`}
                   />
                 </div>
 
@@ -294,7 +291,7 @@ export default async function AddFlight() {
                     type="text"
                     name={`vnumber${index}`}
                     className={styles.input}
-                    placeholder={`رقم هوية/الجواز ${arabicOrdinal(index)}`}
+                    placeholder={`رقم هوية/الجواز ${arabicOrdinal(index-1)}`}
                   />
                 </div>
               </div>

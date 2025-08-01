@@ -166,11 +166,11 @@ export default function LandingPage() {
 
   const handleWhatsAppBooking = (message) => {
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/YOUR_PHONE_NUMBER?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/+966 54 451 9392 ?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
   };
   const handleWhatsApp = () => {
-    const whatsappUrl = `https://wa.me/YOUR_PHONE_NUMBER`;
+    const whatsappUrl = `https://wa.me/+966 54 451 9392`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -223,7 +223,7 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Link className={styles.primaryButton} href="https" role="button">
+            <Link className={styles.primaryButton} href="https://wa.me/+966 54 451 9392" role="button">
               Contact Now
             </Link>
             <Link className={styles.secondaryButton} href="/login" role="button">
@@ -483,24 +483,12 @@ export default function LandingPage() {
           <div className={styles.footerContent}>
             {/* Company Info Column */}
             <div className={styles.column}>
-              <div className={styles.logo}>
-                <Image
-                  src="/placeholder.svg?height=80&width=120"
-                  alt="Mehar Transport Logo"
-                  width={120}
-                  height={80}
-                  className={styles.logoImage}
-                />
-              </div>
+              <br/>
+             <br/>
               <p className={styles.description}>
-                Mehar Umrah Transport offers reliable, comfortable, and affordable services for Umrah and Hajj pilgrims,
+                Global trader LTD offers reliable, comfortable, and affordable services for Umrah and Hajj pilgrims,
                 ensuring Link stress-free journey.
               </p>
-              <div className={styles.socialIcons}>
-                <Link href="#" className={styles.socialIcon}>
-                  <span>f</span>
-                </Link>
-              </div>
             </div>
 
             {/* Contact Info Column */}
@@ -508,15 +496,11 @@ export default function LandingPage() {
               <h3 className={styles.columnTitle}>Contact Info</h3>
               <div className={styles.contactItem}>
                 <span className={styles.contactIcon}>📞</span>
-                <span>+966 566027405</span>
+                <span>+966 54 451 9392</span>
               </div>
               <div className={styles.contactItem}>
                 <span className={styles.contactIcon}>📱</span>
-                <span>+447446471605</span>
-              </div>
-              <div className={styles.contactItem}>
-                <span className={styles.contactIcon}>✉</span>
-                <span>mehartransport786@gmail.com</span>
+                <span>+966 54 451 9392</span>
               </div>
               <div className={styles.contactItem}>
                 <span className={styles.contactIcon}>📍</span>
@@ -558,7 +542,7 @@ export default function LandingPage() {
 
           {/* Copyright Section */}
           <div className={styles.copyright}>
-            <p>Copyright © 2025 Mehar Transport, All rights reserved.</p>
+            <p>Copyright © 2025 Global Carrier LTD, All rights reserved.</p>
           </div>
         </div>
       </motion.footer>

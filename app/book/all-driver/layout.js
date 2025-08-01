@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import NotFound from "../not-found";
 export const metadata = {
   title: "Dashboard",
   description: "Admin and driver dashboard",

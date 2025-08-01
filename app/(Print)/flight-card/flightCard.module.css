@@ -28,8 +28,8 @@
     align-items: center;
 }
 .flight_barcode{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 130px;
     position: relative;
     overflow: hidden;
 }
@@ -63,6 +63,7 @@
     cursor: pointer;
 }
 .container2{
+    margin-top: 50px;
     width: 95%;
     min-height: 200px;
     max-width: 1320px;
@@ -98,6 +99,14 @@
 }
 .bold2{
     color: #8d3d46;
+}
+.paragaraph12{
+    width: 100%;
+    min-height: 20.8px;
+    margin: 0 0 70px;
+    color: #000000;
+    font-size: 15px;
+    font-family: "Cairo", sans-serif;
 }
 .signature{
     width: 180px;
@@ -167,19 +176,6 @@
   font-weight: bold;
   background-color: #f2f2f2;
 }
-.tableCustom1 {
-    width: 100%;
-    border: 1px solid black;
-    border-collapse: collapse;
-    direction: rtl;
-  }
-  
-  .tableCustom1 th,
-  .tableCustom1 td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: center;
-  }
   .tableStriped tr:nth-child(even) {
     background-color: #f9f9f9;
   }
@@ -193,4 +189,7 @@
     bottom: 20px;
     left: 45%;
     color: white;
+  }
+  .tableRow{
+    height: 35px;
   }

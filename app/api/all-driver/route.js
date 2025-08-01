@@ -5,6 +5,7 @@ import {
   deleteDriver,
   updateDriver,
 } from "@/lib/driver";
+import {getCompanyQr} from "@/lib/admin"
 export async function POST(Request) {
   const { search } = await Request.json();
   const result = getDriverByNameOrCar(search);
@@ -14,7 +15,12 @@ export async function POST(Request) {
       { status: 404 }
     );
   }
-  return NextResponse.json({ result }, { status: 200 });
+  const qr=await getCompanyQr();
+  const updatedDrivers = result.map(driver => ({
+    ...driver,
+    qr, // Adds qr to each object
+  }));
+  return NextResponse.json({ result:updatedDrivers }, { status: 200 });
 }
 export async function GET(Request) {
   const result = getAllDriver();
@@ -24,7 +30,13 @@ export async function GET(Request) {
       { status: 404 }
     );
   }
-  return NextResponse.json({ result }, { status: 200 });
+  const qr=await getCompanyQr();
+  const updatedDrivers = result.map(driver => ({
+    ...driver,
+    qr, // Adds qr to each object
+  }));
+  return NextResponse.json({ result :updatedDrivers}, { status: 200 });
+
 }
 export async function DELETE(Request) {
   const { id } = await Request.json();

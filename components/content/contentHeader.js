@@ -14,9 +14,9 @@ export default async function ContentHeader() {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.header_image}>
+        <Link href="/" className={styles.header_image}>
           <Image src="/logo.png" alt="company logo" fill></Image>
-        </div>
+        </Link>
         <div className={styles.profile}>
           <p>ملف شخصي</p>
           <div className={styles.icon} rel="">

@@ -10,7 +10,7 @@
     column-gap: 5px;
 }
 .header_image{
-    width: 120px;
+    width: 200px;
     height:110px;
     position: relative;
 }
@@ -119,7 +119,7 @@
   .driver_photo img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     position: absolute;
   }
   .barcodes{
@@ -141,7 +141,7 @@
   .company_barcode img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
   .company_stamp{
     width: 160px;
@@ -153,7 +153,7 @@
   .company_stamp img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 
   }
   .error{

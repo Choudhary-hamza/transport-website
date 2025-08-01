@@ -8,7 +8,6 @@ export default function Driverdetails() {
   const [data, setData] = useState(null);
   const searchParams = useSearchParams();
   const driverId = searchParams.get("driverId");
-  console.log(driverId);
   useEffect(() => {
     if (!driverId) {
       setNotFound(true);
@@ -25,7 +24,6 @@ export default function Driverdetails() {
       const responseData = await response.json();
       if (response.status === 200) {
         setData(responseData.result);
-        console.log(data);
       } else {
         setNotFound(true);
       }
@@ -47,31 +45,34 @@ export default function Driverdetails() {
           بطاقة السائق
         </div>
         <div className={styles.header_name} dir="rtl">
-          مؤسسة ماهر السفر للنقل
+          شركة الناقل العالمي المحدودة
         </div>
       </header>
       <div className={styles.identification}>
         <p className={styles.register} dir="rtl">
-          السجل التجاري : <b>4031272349</b>
+          السجل التجاري : <b>4031299076</b>
         </p>
         <p className={styles.register} dir="rtl">
-          ترخيص النقل المتخصص : <b>35/00002393</b>
+          ترخيص النقل المتخصص : <b>35/00003211</b>
         </p>
       </div>
       <hr className={styles.hrLine} />
       <div className={styles.information}>
         <div className={styles.pictures}>
-          <div className={styles.driver_photo}>
-            <Image src="/logo.png" alt="company logo" fill />
-          </div>
-          <div className={styles.barcodes}>
-            <div className={styles.company_barcode}>
-              <Image src="/logo.png" alt="company logo" fill />
+        {data?.photo && data.photo.trim() !== "" ? (
+            <div className={styles.driver_photo}>
+              <Image src={data.photo} alt="driver photo" fill />
             </div>
-            <div className={styles.company_stamp}>
-              <Image src="/logo.png" alt="company logo" fill />
-            </div>
+        ) : null}
+
+        <div className={styles.barcodes}>
+          {data?.qr && <div className={styles.company_barcode}>
+            <Image src={data.qr} alt="company logo" fill />
+          </div>}
+          <div className={styles.company_stamp}>
+            <Image src="/signature.png" alt="company logo" fill />
           </div>
+        </div>
         </div>
         <div className={styles.driverInfo}>
           <div className={styles.userInfo}>

@@ -9,7 +9,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .imageCover {
@@ -918,6 +917,8 @@
 /* Logo and Description */
 .logo {
   margin-bottom: 20px;
+  width: 160px;
+  height: 80px;
 }
 
 .logoImage {

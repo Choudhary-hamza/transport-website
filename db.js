@@ -45,11 +45,13 @@ db.prepare(
     admin_id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     password TEXT NOT NULL
+    qr TEXT
   )
 `
 ).run();
 
 console.log("Admin table created!");
+
 
 db.prepare(
   `

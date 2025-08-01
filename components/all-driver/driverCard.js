@@ -10,7 +10,7 @@ export default function DriverCard({ eachData, index, deleteDriver }) {
       </div>
       <div className={styles.logo_container}>
         <div className={styles.company_barcode}>
-          <Image src="/hamza.jpg" alt="الرمز الشريطي للشركة" fill></Image>
+          <Image src={eachData.qr} alt="الرمز الشريطي للشركة" fill></Image>
         </div>
         <p className={styles.driver_card}> بطاقة السائق </p>
       </div>
